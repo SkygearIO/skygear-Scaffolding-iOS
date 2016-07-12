@@ -13,10 +13,13 @@ module Pod
       @message_bank = MessageBank.new(self)
     end
 
-    def ask(question)
+    def ask(question, example)
       answer = ""
       loop do
         puts "\n#{question}?"
+        if example
+          puts "Example: #{example}"
+        end
 
         @message_bank.show_prompt
         answer = gets.chomp
@@ -70,9 +73,9 @@ module Pod
     def run
       @message_bank.welcome_message
 
-      @skygear_endpoint = self.ask("What is your skygear endpoint? (You can find it in portal)")
+      @skygear_endpoint = self.ask("What is your skygear endpoint? (You can find it in portal)", "https://myapp.skygeario.com")
 
-      @skygear_apikey = self.ask("What is your skygear API key? (You can find it in portal)")
+      @skygear_apikey = self.ask("What is your skygear API key? (You can find it in portal)", "dc0903fa85924776baa77df813901efc")
 
       framework = self.ask_with_answers("What language do you want to use?", ["Swift", "ObjC"]).to_sym
       case framework

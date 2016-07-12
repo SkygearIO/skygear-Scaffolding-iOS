@@ -52,7 +52,7 @@ module Pod
 
     def run_setup_questions
 
-      puts yellow_bang + "Before you can create a new library we need to setup your git credentials."
+      puts yellow_bang + "Before you can create a new app we need to setup your git credentials."
 
       unless @configurator.user_name.length > 0
         puts "\n What is your name? "

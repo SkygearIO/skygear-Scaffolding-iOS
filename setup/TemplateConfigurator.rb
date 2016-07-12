@@ -13,7 +13,7 @@ module Pod
       @message_bank = MessageBank.new(self)
     end
 
-    def ask(question, example)
+    def ask(question, example = nil)
       answer = ""
       loop do
         puts "\n#{question}?"

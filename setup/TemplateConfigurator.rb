@@ -86,6 +86,10 @@ module Pod
           ConfigureIOS.perform(configurator: self)
       end
 
+      if self.ask_with_answers("Do you want to install Skygear Chat extension? (The core SDK already got Auth, CloudDB, Push and Pubsub)", ["yes", "no"]).to_sym == :yes
+        add_pod_to_podfile "SKYKitChat"
+      end
+
       replace_variables_in_files
       clean_template_files
       add_pods_to_podfile

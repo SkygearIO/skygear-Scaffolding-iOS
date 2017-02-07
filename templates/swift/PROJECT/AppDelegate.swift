@@ -17,8 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        SKYContainer.default().configAddress("myapp")
-        SKYContainer.default().configure(withAPIKey: "myapp")
+        SKYContainer.default().configAddress("SKYGEAR_ENDPOINT")
+        SKYContainer.default().configure(withAPIKey: "SKYGEAR_APIKEY")
         return true
     }
 
@@ -46,4 +46,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-

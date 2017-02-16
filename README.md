@@ -1,18 +1,47 @@
 # Scaffolding for Skygear iOS App
 
-Your Skygear iOS App is one command away! Copy the following to your Terminal to
-get started:
+Your Skygear iOS App is one command away! This scaffolding app set up the basic
+of Skygear iOS app for you, including:
 
-```shell
-pod lib create --silent --template-url=https://github.com/SkygearIO/skygear-Scaffolding-iOS.git "YourProjectName"
-```
+* Choose between Objective-C and Swift
+* Configure API endpoint
+* Basic features like login / signup.
 
-You can learn more about the Skygear iOS SDK by going to https://docs.skygear.io/ios/guide.
-
-## Requirements
+## Prerequisite
 
 * [Xcode](https://developer.apple.com/download/)
 * [CocoaPods](https://guides.cocoapods.org/using/getting-started.html)
+* Sign up [Skygear.io](https://skygear.io) for the endpoint URL and API Key
+
+## How to use
+
+```bash
+sudo gem install cocoapods
+
+pod repo update
+
+pod lib create --silent --template-url=https://github.com/SkygearIO/skygear-Scaffolding-iOS.git "YourProjectName"
+```
+
+And it will walk you through the following:
+```bash
+What is your skygear endpoint (You can find it in portal)?
+Example: https://myapp.skygeario.com
+> https://myapp.skygeario.com
+
+What is your skygear API key (You can find it in portal)?
+Example: dc0903fa85924776baa77df813901efc
+> <your-api-key>
+
+What language do you want to use? [ Swift / ObjC  ]
+> ObjC
+
+What is your class prefix?
+> YPN
+```
+
+You can learn more about the Skygear iOS SDK by going to https://docs.skygear.io
+
 
 ## Credits
 

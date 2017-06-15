@@ -50,7 +50,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func didTapLogin(_ sender: AnyObject) {
-        SKYContainer.default().login(withUsername: usernameField.text, password: passwordField.text) { (user, error) in
+        SKYContainer.default().auth.login(withUsername: usernameField.text, password: passwordField.text) { (user, error) in
             if let authError = error {
                 self.showAlert(authError)
                 return
@@ -61,7 +61,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didTapSignup(_ sender: AnyObject) {
-        SKYContainer.default().signup(withUsername: usernameField.text, password: passwordField.text) { (user, error) in
+        SKYContainer.default().auth.signup(withUsername: usernameField.text, password: passwordField.text) { (user, error) in
             if let authError = error {
                 self.showAlert(authError)
                 return
@@ -72,7 +72,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didTapLogout(_ sender: AnyObject) {
-        SKYContainer.default().logout { (user, error) in
+        SKYContainer.default().auth.logout { (user, error) in
             if let authError = error {
                 self.showAlert(authError)
                 return

@@ -64,33 +64,33 @@
 }
 
 - (IBAction)didTapLogin:(id)sender {
-    [[SKYContainer defaultContainer] loginWithUsername:_usernameField.text
-                                              password:_passwordField.text
-                                     completionHandler:^(SKYUser *user, NSError *error) {
-                                         if (error) {
-                                             [self showAlertWithError:error];
-                                             return;
-                                         }
-                                         NSLog(@"Logged in as: %@", user);
-                                         [self updateLoginStatus];
-                                     }];
+    [[[SKYContainer defaultContainer] auth] loginWithUsername:_usernameField.text
+                                                     password:_passwordField.text
+                                            completionHandler:^(SKYUser *user, NSError *error) {
+                                                if (error) {
+                                                    [self showAlertWithError:error];
+                                                    return;
+                                                }
+                                                NSLog(@"Logged in as: %@", user);
+                                                [self updateLoginStatus];
+                                            }];
 }
 
 - (IBAction)didTapSignup:(id)sender {
-    [[SKYContainer defaultContainer] signupWithUsername:_usernameField.text
-                                               password:_passwordField.text
-                                      completionHandler:^(SKYUser *user, NSError *error) {
-                                          if (error) {
-                                              [self showAlertWithError:error];
-                                              return;
-                                          }
-                                          NSLog(@"Signed up as: %@", user);
-                                          [self updateLoginStatus];
-                                      }];
+    [[[SKYContainer defaultContainer] auth] signupWithUsername:_usernameField.text
+                                                      password:_passwordField.text
+                                             completionHandler:^(SKYUser *user, NSError *error) {
+                                                 if (error) {
+                                                     [self showAlertWithError:error];
+                                                     return;
+                                                 }
+                                                 NSLog(@"Signed up as: %@", user);
+                                                 [self updateLoginStatus];
+                                             }];
 }
 
 - (IBAction)didTapLogout:(id)sender {
-    [[SKYContainer defaultContainer] logoutWithCompletionHandler:^(SKYUser *user, NSError *error) {
+    [[[SKYContainer defaultContainer] auth] logoutWithCompletionHandler:^(SKYUser *user, NSError *error) {
         if (error) {
             [self showAlertWithError:error];
             return;

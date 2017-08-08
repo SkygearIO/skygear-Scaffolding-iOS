@@ -36,7 +36,7 @@
 
 - (void)updateLoginStatus
 {
-    if ([[SKYContainer defaultContainer] currentUserRecordID]) {
+    if ([[[SKYContainer defaultContainer] auth] currentUserRecordID]) {
         _loginStatusLabel.text = @"Logged in";
         _loginButton.enabled = NO;
         _signupButton.enabled = NO;
@@ -66,7 +66,7 @@
 - (IBAction)didTapLogin:(id)sender {
     [[[SKYContainer defaultContainer] auth] loginWithUsername:_usernameField.text
                                                      password:_passwordField.text
-                                            completionHandler:^(SKYUser *user, NSError *error) {
+                                            completionHandler:^(SKYRecord *user, NSError *error) {
                                                 if (error) {
                                                     [self showAlertWithError:error];
                                                     return;
@@ -79,7 +79,7 @@
 - (IBAction)didTapSignup:(id)sender {
     [[[SKYContainer defaultContainer] auth] signupWithUsername:_usernameField.text
                                                       password:_passwordField.text
-                                             completionHandler:^(SKYUser *user, NSError *error) {
+                                             completionHandler:^(SKYRecord *user, NSError *error) {
                                                  if (error) {
                                                      [self showAlertWithError:error];
                                                      return;
@@ -90,7 +90,7 @@
 }
 
 - (IBAction)didTapLogout:(id)sender {
-    [[[SKYContainer defaultContainer] auth] logoutWithCompletionHandler:^(SKYUser *user, NSError *error) {
+    [[[SKYContainer defaultContainer] auth] logoutWithCompletionHandler:^(SKYRecord *user, NSError *error) {
         if (error) {
             [self showAlertWithError:error];
             return;

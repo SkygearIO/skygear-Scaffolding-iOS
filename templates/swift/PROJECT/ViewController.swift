@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     }
     
     func updateLoginStatus() {
-        if ((SKYContainer.default().currentUserRecordID) != nil) {
+        if ((SKYContainer.default().auth.currentUserRecordID) != nil) {
             loginStatusLabel.text = "Logged in"
             loginButton.isEnabled = false
             signupButton.isEnabled = false

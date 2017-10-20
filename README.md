@@ -18,6 +18,8 @@ of Skygear iOS app for you, including:
 ```bash
 sudo gem install cocoapods
 
+sudo gem install colored
+
 pod repo update
 
 pod lib create --silent --template-url=https://github.com/SkygearIO/skygear-Scaffolding-iOS.git "YourProjectName"

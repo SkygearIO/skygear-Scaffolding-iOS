@@ -25,11 +25,11 @@ pod lib create --silent --template-url=https://github.com/SkygearIO/skygear-Scaf
 
 And it will walk you through the following:
 ```bash
-What is your skygear endpoint (You can find it in portal)?
+What is your skygear endpoint (You can find it in https://portal.skygear.io/)?
 Example: https://myapp.skygeario.com
 > https://myapp.skygeario.com
 
-What is your skygear API key (You can find it in portal)?
+What is your skygear API key (You can find it in https://portal.skygear.io/)?
 Example: dc0903fa85924776baa77df813901efc
 > <your-api-key>
 

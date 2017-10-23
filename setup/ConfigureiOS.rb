@@ -12,7 +12,7 @@ module Pod
     end
 
     def perform
-      configurator.add_pod_to_podfile "SKYKit"
+      configurator.add_pod_to_podfile "SKYKit', '~>1.1"
 
       prefix = nil
 

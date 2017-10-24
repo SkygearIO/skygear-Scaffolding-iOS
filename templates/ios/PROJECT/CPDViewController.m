@@ -71,7 +71,7 @@
                                                     [self showAlertWithError:error];
                                                     return;
                                                 }
-                                                NSLog(@"Logged in as: %@", user);
+                                                NSLog(@"Logged in as: %@", user.recordID.recordName);
                                                 [self updateLoginStatus];
                                             }];
 }
@@ -84,7 +84,7 @@
                                                      [self showAlertWithError:error];
                                                      return;
                                                  }
-                                                 NSLog(@"Signed up as: %@", user);
+                                                 NSLog(@"Signed up as: %@", user.recordID.recordName);
                                                  [self updateLoginStatus];
                                              }];
 }

@@ -50,23 +50,23 @@ class ViewController: UIViewController {
     }
 
     @IBAction func didTapLogin(_ sender: AnyObject) {
-        SKYContainer.default().auth.login(withUsername: usernameField.text, password: passwordField.text) { (user, error) in
+        SKYContainer.default().auth.login(withUsername: usernameField.text!, password: passwordField.text!) { (user, error) in
             if let authError = error {
                 self.showAlert(authError)
                 return
             }
-            print("Logged in as: \(user?.userID)")
+            print("Logged in as: \(user?.recordID.recordName)")
             self.updateLoginStatus()
         }
     }
     
     @IBAction func didTapSignup(_ sender: AnyObject) {
-        SKYContainer.default().auth.signup(withUsername: usernameField.text, password: passwordField.text) { (user, error) in
+        SKYContainer.default().auth.signup(withUsername: usernameField.text!, password: passwordField.text!) { (user, error) in
             if let authError = error {
                 self.showAlert(authError)
                 return
             }
-            print("Signed up as: \(user?.userID)")
+            print("Signed up as: \(user?.recordID.recordName)")
             self.updateLoginStatus()
         }
     }

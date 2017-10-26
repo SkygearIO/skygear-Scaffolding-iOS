@@ -98,7 +98,7 @@ module Pod
       reinitialize_git_repo
       run_pod_install
 
-      @message_bank.farewell_message
+      @message_bank.farewell_message unless skip_farewell
     end
 
     #----------------------------------------#
@@ -193,6 +193,10 @@ module Pod
 
     def podfile_path
       'Podfile'
+    end
+
+    def skip_farewell
+      (ENV['SKIP_FAREWELL'] || "false").strip == "true"
     end
 
     #----------------------------------------#

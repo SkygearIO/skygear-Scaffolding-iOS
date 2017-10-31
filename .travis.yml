@@ -1,0 +1,16 @@
+language: objective-c
+osx_image: xcode9.1
+cache:
+- cocoapods
+- pip
+before_install:
+- gem install --no-rdoc --no-ri 'cocoapods:1.1.1'
+- pod repo update
+- git config --global user.name "Travis User"
+- git config --global user.email "travis@example.com"
+script:
+- make test
+notifications:
+  slack:
+    rooms:
+      secure: j9ulnh2saguRLMuAM5EHuNPxRuCQ02Pb+0CTlwl2CBofT1J51TxGaAZr+eN+oC8VdS/cYh9L76aMzxy6xxkx+719So2Yepv62wtCpHPXBRLGEIZUSQuSllzu15dWafLPOqUuO5WBB1DDHm9reyYhwWfOOeYO1Rd1nhzn8FHDiPIENELdRQpXBN3a+PrBTiwVSw31y3uyvLFRrKl14vnFcd1NizTwy355iOFhlv689R1c6zYa2t+AiPD5WwNEeQMLtGZIQDvIe0VvNzej0sZAZvJWO7JJTuOMxcsnuyG/Yj2HoU3KTU5kxtFGHFn2HOvr6IoR72Y0KKWUkupVtsSNiS7D6YjjQ1qo7+QGlCaIn1c+iEp99n2mQ90yUy/xzPV6eJhXlqciMbiGy+FkRCNHDgT2BY+d39emRhl0k1oD5wFHcmBCUYpLLJ3E4nWRG9br9wlwW/Iyc8MU83WHrlc88hN+/cR7IQpMDI3AZ8nO70EQVlJh+9BepoyIXViqtUGB1kG5f9nTX0UajT1J5LkOnL95ylZVC4uHnz421tZ1RvdW8sc1a2ODYmzyZmT+isFLDoymWzFlz9Gq4yfdKNL1xBj+YhXn5wlPmUK3ksyBgkJ85i6MGvLfmj5raxf5EmSMaL42F1yEvSAuD8Il/QHLNQ0w+7nt8uIchUrg6s/0UbQ=

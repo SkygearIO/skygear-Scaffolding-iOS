@@ -16,7 +16,7 @@ of Skygear iOS app for you, including:
 ## How to use
 
 ```bash
-sudo gem install colored cocoapods
+sudo gem install cocoapods
 
 pod repo update
 

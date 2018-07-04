@@ -12,7 +12,7 @@ module Pod
     end
 
     def perform
-      configurator.add_pod_to_podfile "SKYKit', '~>1.1"
+      configurator.add_pod_to_podfile "SKYKit', '~> 1.6"
 
       Pod::ProjectManipulator.new({
         :configurator => @configurator,
@@ -22,7 +22,7 @@ module Pod
       }).run
 
       `mv ./templates/swift/* ./`
-      
+
       # There has to be a single file in the Classes dir
       # or a framework won't be created
       `touch Pod/Classes/ReplaceMe.swift`

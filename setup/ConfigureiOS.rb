@@ -12,7 +12,7 @@ module Pod
     end
 
     def perform
-      configurator.add_pod_to_podfile "SKYKit', '~>1.1"
+      configurator.add_pod_to_podfile "SKYKit', '~> 1.6"
 
       prefix = nil
 
@@ -34,7 +34,7 @@ module Pod
       }).run
 
       `mv ./templates/ios/* ./`
-      
+
       # There has to be a single file in the Classes dir
       # or a framework won't be created, which is now default
       `touch Pod/Classes/ReplaceMe.m`

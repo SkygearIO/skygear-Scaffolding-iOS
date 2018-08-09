@@ -87,7 +87,7 @@ module Pod
       end
 
       if self.ask_with_answers("Do you want to install Skygear Chat extension? (The core SDK already got Auth, CloudDB, Push and Pubsub)", ["yes", "no"]).to_sym == :yes
-        add_pod_to_podfile "SKYKitChat', '~>1.1"
+        add_pod_to_podfile "SKYKitChat', '~> 1.5.1"
       end
 
       replace_variables_in_files
